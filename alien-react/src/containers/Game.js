@@ -12,6 +12,6 @@ moveObjects: (mousePosition) => {
 }
 })
 
-const Game = connect(mapStateToProps)(mapDispatchToProps)(App);
+const Game = connect(mapStateToProps, mapDispatchToProps)(App);
 
 export default Game;

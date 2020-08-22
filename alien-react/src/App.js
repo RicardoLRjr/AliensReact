@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { getCanvasPosition } from './utils/formulas'
 import Canvas from "./components/Canvas"
 class App extends Component {
 componentDidMount(){
+  const self = this
   setInterval(() => {
-    this.props.moveObjects(this.canvasMousePosition)
-  })
+    self.props.moveObjects(self.canvasMousePosition)
+  }, 10)
 }
  trackMouse(event){
-   this.canvasMousePosition = getCanvasPosition
+   this.canvasMousePosition = getCanvasPosition(event)
  }
 
   render() {
@@ -24,8 +25,8 @@ componentDidMount(){
 }
 
 App.propTypes = {
-  angle: propTypes.number.isRequired,
-  trackMouse: propTypes.func.isRequired,
+  angle: PropTypes.number.isRequired,
+  trackMouse: PropTypes.func.isRequired,
 };
 
 export default App;
