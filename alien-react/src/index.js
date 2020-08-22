@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux'
 import  Game  from './containers/Game'
 import reducer  from './reducers'
+import "./index.css"
 import * as serviceWorker from './serviceWorker';
 
 
