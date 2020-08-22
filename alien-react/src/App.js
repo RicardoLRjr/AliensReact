@@ -8,19 +8,24 @@ componentDidMount(){
     this.props.moveObjects(this.canvasMousePosition)
   })
 }
-
+ trackMouse(event){
+   this.canvasMousePosition = getCanvasPosition
+ }
 
   render() {
     return (
       <div className="App">
-        <Canvas/>
+        <Canvas
+        angle={this.props.angle}
+        trackMouse={event => (this.trackMouse(event))}/>
       </div>
     );
   }
 }
 
 App.propTypes = {
-  message: propTypes.string.isRequired,
+  angle: propTypes.number.isRequired,
+  trackMouse: propTypes.func.isRequired,
 };
 
 export default App;
