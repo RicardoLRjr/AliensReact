@@ -14,11 +14,12 @@ import PropTypes from "prop-types";
 
 
 const Canvas = (props) => {
+    const gameHeight = 1200;
   const viewBox = [
     window.innerWidth / -2,
-    100 - window.innerHeight,
+    100 - gameHeight,
     window.innerWidth,
-    window.innerHeight,
+    gameHeight,
   ];
   return (
     <svg
@@ -32,7 +33,6 @@ const Canvas = (props) => {
           <feDropShadow dx="1" dy="1" stdDeviation="2" />
         </filter>
       </defs>
-      <Title/>
       <Sky />
       <Ground />
       <CannonPipe rotation={props.angle} />
@@ -43,6 +43,7 @@ const Canvas = (props) => {
       <FlyingObject position={{x: 150, y: -300}}/>
       <Heart position={{x: 500, y: -500}}/>
       <StartGame onClick={() => console.log('Aliens, Go Home!')} />
+       <Title/>
     </svg>
   );
 };
