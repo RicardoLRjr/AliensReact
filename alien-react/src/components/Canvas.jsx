@@ -8,6 +8,7 @@ import CurrentScore from "./CurrentScore";
 import FlyingObject from "./FlyingObject"
 import Heart from "./Heart";
 import StartGame from "./StartGame";
+import Title from "./Title";
 import PropTypes from "prop-types";
 
 
@@ -31,9 +32,9 @@ const Canvas = (props) => {
           <feDropShadow dx="1" dy="1" stdDeviation="2" />
         </filter>
       </defs>
+      <Title/>
       <Sky />
       <Ground />
-
       <CannonPipe rotation={props.angle} />
       <CannonBase />
       <CannonBall position={{ x: 0, y: -100 }} />
@@ -41,7 +42,7 @@ const Canvas = (props) => {
       <FlyingObject position={{x: -150, y: -300}}/>
       <FlyingObject position={{x: 150, y: -300}}/>
       <Heart position={{x: 500, y: -500}}/>
-      <StartGame position={{x: 500, y: 35}}/>
+      <StartGame onClick={() => console.log('Aliens, Go Home!')} />
     </svg>
   );
 };
