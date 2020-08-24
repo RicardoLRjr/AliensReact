@@ -7,7 +7,9 @@ import CannonBall from "./CannonBall";
 import CurrentScore from "./CurrentScore";
 import FlyingObject from "./FlyingObject"
 import Heart from "./Heart";
+import StartGame from "./StartGame";
 import PropTypes from "prop-types";
+
 
 
 const Canvas = (props) => {
@@ -39,6 +41,7 @@ const Canvas = (props) => {
       <FlyingObject position={{x: -150, y: -300}}/>
       <FlyingObject position={{x: 150, y: -300}}/>
       <Heart position={{x: 500, y: -500}}/>
+      <StartGame position={{x: 500, y: 35}}/>
     </svg>
   );
 };
