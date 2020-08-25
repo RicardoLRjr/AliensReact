@@ -26,6 +26,8 @@ componentDidMount(){
       <div className="App">
         <Canvas
         angle={this.props.angle}
+        gameState={this.props.gameState}
+       startGame={this.props.startGame}
         trackMouse={event => (this.trackMouse(event))}/>
       </div>
     );
