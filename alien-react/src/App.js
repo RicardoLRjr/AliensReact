@@ -37,6 +37,13 @@ componentDidMount(){
 App.propTypes = {
   angle: PropTypes.number.isRequired,
   trackMouse: PropTypes.func.isRequired,
+  gameState: PropTypes.shape({
+    kills: PropTypes.number.isRequired,
+    lives: PropTypes.number.isRequired,
+    started: PropTypes.bool.isRequired
+  }).isRequired,
+  moveObjects: PropTypes.func.isRequired,
+startGame: PropTypes.func.isRequired,
 };
 
 export default App;
