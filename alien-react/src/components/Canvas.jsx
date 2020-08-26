@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { signIn } from "auth0-web"
 import Sky from "./Sky";
 import Ground from "./Ground";
 import CannonBase from "./CannonBase";
@@ -9,7 +11,8 @@ import FlyingObject from "./FlyingObject";
 import Heart from "./Heart";
 import StartGame from "./StartGame";
 import Title from "./Title";
-import PropTypes from "prop-types";
+import Login from "./Login"
+
 
 const Canvas = (props) => {
   const gameHeight = 1200;
@@ -48,6 +51,7 @@ const Canvas = (props) => {
         <g>
           <StartGame onClick={() => props.startGame()} />
           <Title />
+          <Login authenticate={signIn} />
         </g>
       )}
     </svg>
