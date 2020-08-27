@@ -5,6 +5,7 @@ import {
 import moveObjects from "./moveObjects"
 import startGame from "./startGame"
 import shoot from "./shoot"
+
   const initialGameState = {
     started: false,
     kills: 0,
