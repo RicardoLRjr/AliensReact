@@ -11,8 +11,14 @@ import Canvas from "./components/Canvas";
     redirectUri: 'http://localhost:3000/',
     responseType: 'token id_token',
     scope: 'openid profile manage:points',
+    audience: 'https://aliens-warzone.com.'
   });
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.shoot = this.shoot.bind(this);
+  }
+
   componentDidMount() {
     const self = this;
     Auth0.handleAuthCallback();
@@ -68,7 +74,10 @@ class App extends Component {
     this.canvasMousePosition = getCanvasPosition(event);
   }
 
-  
+  shoot() {
+    this.props.shoot(this.canvasMousePosition);
+  }
+
 
   render() {
     return (
@@ -80,6 +89,7 @@ class App extends Component {
            players={this.props.players}
            startGame={this.props.startGame}
            trackMouse={event => (this.trackMouse(event))}
+           shoot={this.shoot}
         />
       </div>
     );
@@ -118,7 +128,8 @@ App.propTypes = {
     maxScore: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     picture: PropTypes.string.isRequired,
-  }))
+  })),
+  shoot: PropTypes.func.isRequired,
 };
 
 App.defaultProps = {

@@ -13,6 +13,7 @@ export const startGame = () => ({
 
 export const LEADERBOARD_LOADED = 'LEADERBOARD_LOADED';
 export const LOGGED_IN = 'LOGGED_IN';
+export const SHOOT = 'SHOOT';
 
 
 export const leaderboardLoaded = players => ({
@@ -23,4 +24,9 @@ export const leaderboardLoaded = players => ({
   export const loggedIn = player => ({
     type: LOGGED_IN,
     player,
+  });
+
+  export const shoot = (mousePosition) => ({
+    type: SHOOT,
+    mousePosition,
   });
