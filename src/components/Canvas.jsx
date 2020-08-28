@@ -66,7 +66,7 @@ const Canvas = (props) => {
         <g>
           <StartGame onClick={() => props.startGame()} />
           <Title />
-          <Leaderboard currentPlayer={props.currentPlayer} authenticate={signIn} leaderboard={props.players} />
+          {/* <Leaderboard currentPlayer={props.currentPlayer} authenticates={signIn} leaderboard={props.players} /> */}
         </g>
       )} 
       {lives}
