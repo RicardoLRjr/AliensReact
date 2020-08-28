@@ -48,7 +48,7 @@ io.on('connection', (socket) => {
   socket.on('new-max-score', newMaxScoreHandler);
 });
 
-http.listen(process.env.PORT || 3001, () => {
+http.listen(process.env.PORT ||3001, () => {
   console.log('listening on port 3001')
   console.log("Is this for real?");
 });
